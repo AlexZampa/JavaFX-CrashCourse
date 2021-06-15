@@ -17,57 +17,55 @@ public class FXMLController {
 	private URL location;
 
 	@FXML
-	private TextField txtNome;
+	private TextField textName;
 
 	@FXML
-	private TextField txtEta;
+	private TextField textAge;
 
 	@FXML
 	private Button btnOK;
 
 	@FXML
-	private Label lblRisposta;
+	private Label lblResponse;
 
 	@FXML
 	void handleOK(ActionEvent event) {
 //    	System.out.println("OK") ;
-		String nome = txtNome.getText();
-		if(nome.length()==0) {
-			lblRisposta.setText("Devi inserire il nome");
+		String name = textName.getText();
+		if(name.length()==0) {
+			lblResponse.setText("Devi inserire il nome");
 			return ;
 		}
 
-		String etaS = txtEta.getText();
-		if(etaS.length()==0) {
-			lblRisposta.setText("Devi inserire l'età");
+		String ageS = textAge.getText();
+		if(ageS.length()==0) {
+			lblResponse.setText("Devi inserire l'età");
 			return ;
 		}
 
-		int eta ;
+		int age ;
 		try {
-			eta = Integer.parseInt(etaS);
+			age = Integer.parseInt(ageS);
 		}catch (NumberFormatException e) {
-			lblRisposta.setText("L'età deve essere un numero");
+			lblResponse.setText("L'età deve essere un numero");
 			return ;
 		}
 
 		String saluto;
-		if (eta < 18) {
-			saluto = "Ciao, " + nome + "!";
+		if (age < 18) {
+			saluto = "Ciao, " + name + "!";
 		} else {
-			saluto = "Buongiorno, " + nome + "!";
+			saluto = "Buongiorno, " + name + "!";
 		}
-
-		lblRisposta.setText(saluto);
+		lblResponse.setText(saluto);
 
 	}
 
 	@FXML
 	void initialize() {
-		assert txtNome != null : "fx:id=\"txtNome\" was not injected: check your FXML file 'Scene.fxml'.";
-		assert txtEta != null : "fx:id=\"txtEta\" was not injected: check your FXML file 'Scene.fxml'.";
+		assert textName != null : "fx:id=\"textname\" was not injected: check your FXML file 'Scene.fxml'.";
+		assert textAge != null : "fx:id=\"textAge\" was not injected: check your FXML file 'Scene.fxml'.";
 		assert btnOK != null : "fx:id=\"btnOK\" was not injected: check your FXML file 'Scene.fxml'.";
-		assert lblRisposta != null : "fx:id=\"lblRisposta\" was not injected: check your FXML file 'Scene.fxml'.";
-
+		assert lblResponse != null : "fx:id=\"lblResponse\" was not injected: check your FXML file 'Scene.fxml'.";
 	}
 }

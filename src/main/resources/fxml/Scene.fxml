@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.javafxcrashcourse.FXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.javafxcrashcourse.FXMLController">
    <top>
       <Label text="Buongiorno" BorderPane.alignment="CENTER">
          <font>
@@ -24,21 +23,35 @@
             <HBox spacing="5.0">
                <children>
                   <Label prefWidth="65.0" text="Il tuo nome" />
-                  <TextField fx:id="txtNome" />
+                  <TextField fx:id="textName">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </TextField>
                </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
             </HBox>
             <HBox spacing="5.0">
                <children>
                   <Label prefWidth="65.0" text="La tua età" />
-                  <TextField fx:id="txtEta" />
+                  <TextField fx:id="textAge">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </TextField>
                </children>
             </HBox>
             <HBox alignment="TOP_RIGHT">
                <children>
-                  <Button fx:id="btnOK" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleOK" text="OK" />
+                  <Button fx:id="btnOK" alignment="CENTER" mnemonicParsing="false" onAction="#handleOK" text="OK" />
                </children>
+               <VBox.margin>
+                  <Insets right="5.0" />
+               </VBox.margin>
             </HBox>
-            <Label fx:id="lblRisposta" minWidth="-Infinity" />
+            <Label fx:id="lblResponse" minWidth="-Infinity" />
          </children>
          <BorderPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
